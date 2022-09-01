@@ -1,4 +1,14 @@
-let updateList = [{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let updateList = [{
     versionName: "iOS 15",
     releseDate: "23/03/2021",
     bugs: ["b1E35P"],
@@ -10,10 +20,7 @@ let updateList = [{
     versionName: "iOS 15.1",
     releseDate: "21/09/2021",
     bugs: ["b1E3T6"],
-    features: [`New automation triggers based on the current reading of a HomeKit-enabled humidity, air quality, or light level sensor
-        Shortcuts
-        
-        New pre-built actions let you overlay text on images or gifs , plus a new collection of games lets you pass the time with Siri`],
+    features: [`IOT Updates`],
     author: ["srini"],
     type: "enhancement"
 },
@@ -21,23 +28,21 @@ let updateList = [{
     versionName: "iOS 15.4.1",
     releseDate: "10/10/2022",
     bugs: ["b1E357P"],
-    features: [`"Battery may drain more quickly than expected after updating to iOS 15.4"
-        "Braille devices may become unresponsive while navigating text or displaying an ale"`],
+    features: [`Battery Problems`],
     author: ["srini"],
     type: "patch"
 }, {
     versionName: "iOS 15.5",
     releseDate: "6/11/2022",
     bugs: ["b5E357P"],
-    features: [`Wallet now enables Apple Cash customers to send and request money from their Apple Cash card"
-        "Apple Podcasts includes a new setting to limit episodes stored on your iPhone and automatically delete older on"`],
+    features: [`More Payment Gateways`],
     author: ["ravi"],
     type: "major"
 }, {
     versionName: "iOS 15.6",
     releseDate: "18/12/2021",
     bugs: ["b1E857P"],
-    features: [`TV app adds the option to restart a live sports game already in-progress and pause, rewind, or fast-forward`],
+    features: [`Support for smart TV`],
     author: ["ram"],
     type: "enhancement"
 }]
@@ -72,14 +77,13 @@ let bugidList = [{
     "Fixes an issue in Safari where a tab may revert back to a previous page"`
 }
 ]
-console.log(updateList)
-console.log("*************************************************************************************************************************")
+console.table(updateList)
 // input 
 var checkType = "patch"
 var enterid = "b1E35P"
 var checkyear = "2022"
 var checkfeatures = "gifs"
-var checkVersionName = "iOS 15.4.1"
+var checkVersionName = "7.0. 04 (7004"
 
 //   id     ************************************************************************************************************************************** */
 console.log("id :", enterid)
@@ -110,15 +114,14 @@ console.log("*******************************************************************
 console.log("features :", checkfeatures)
 function cheackfeature() {
     updateList.forEach(feat => {
-        
         for (let i of feat.features) {
             let featureswordss = i.split(" ")
             
 
+
             for (let words of featureswordss) {
                 if (words == checkfeatures) {
                     console.log("checkfeatures verisoon", feat.versionName)
-                
                 }
 
             }
@@ -179,3 +182,6 @@ function typez(typez) {
 }
 typez(updateList)
 // **********************************************************************************************************************************************
+    </script>   
+</body>
+</html>
