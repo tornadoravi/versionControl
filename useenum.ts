@@ -1,22 +1,22 @@
 import { isConstructorDeclaration } from "typescript"
 
-enum NewTypes {major,patch,enhancement}
+enum NewTypes { major, patch, enhancement }
 
-interface  realise{
-    versionName:string,
-    releseDate:string,
-    bugs:string[],
-    features:string[],
-    author:string[],
-    type:NewTypes
+interface realise {
+    versionName: string,
+    releseDate: string,
+    bugs: string[],
+    features: string[],
+    author: string[],
+    type: NewTypes
 }
-interface bug{
-    id:string,
-    details:string
+interface bug {
+    id: string,
+    details: string
 
 
 }
-let updateList:realise[] = [{
+let updateList: realise[] = [{
     versionName: "iOS 15",
     releseDate: "23/03/2021",
     bugs: ["b1E35P"],
@@ -33,7 +33,7 @@ let updateList:realise[] = [{
         
         New pre-built actions let you overlay text on images or gifs , plus a new collection of games lets you pass the time with Siri`],
     author: ["srini"],
-    type:  NewTypes['enhancement']
+    type: NewTypes['enhancement']
 },
 {
     versionName: "iOS 15.4.1",
@@ -94,7 +94,7 @@ let bugidList = [{
 console.log(updateList)
 console.log("*************************************************************************************************************************")
 // input 
-var checkType="2"
+var checkType = "2"
 var enterid = "b1E35P"
 var checkyear = "2021"
 var checkfeatures = "may"
@@ -102,12 +102,12 @@ var checkVersionName = "iOS 15.6"
 
 //   id     ************************************************************************************************************************************** */
 console.log("id :", enterid)
-function bugidLists(bugid:any) {
+function bugidLists(bugid: any) {
     for (let i = 0; i < bugid.length; i++) {
         if (bugid[i].id == enterid) {
             console.log("Bug:", bugidList[i].details)
         }
-        else{
+        else {
             console.log("invalid bug id")
             break
         }
@@ -120,13 +120,13 @@ console.log("*******************************************************************
 
 console.log("year :", checkyear)
 console.log("*************************************************************************************************************************")
-function release(years:any) {
+function release(years: any) {
     for (let i = 0; i < years.length; i++) {
         let year = ((years[i].releseDate).slice(-4))
         if (checkyear == year) {
             console.log(years[i])
         }
-          }
+    }
 }
 release(updateList)
 console.log("*************************************************************************************************************************")
@@ -141,7 +141,7 @@ function cheackfeature() {
             for (let words of featureswordss) {
                 if (words == checkfeatures) {
                     console.log("checkfeatures verison: ", feat.versionName)
-                    
+
                 }
             }
 
@@ -152,7 +152,7 @@ cheackfeature()
 console.log("*************************************************************************************************************************")
 //max author    *******************************************************************************************************************************************
 console.log("maxmium releases author:")
-const authorNames:any = []
+const authorNames: any = []
 updateList.forEach((value) => {
     for (let i of value.author)
         authorNames.push(i)
@@ -179,15 +179,15 @@ console.log("*******************************************************************
 //version name ******************************************************************************************************************************************* */
 console.log("version name : ", checkVersionName)
 console.log("*************************************************************************************************************************")
-function versionNamez(name:any) {
+function versionNamez(name: any) {
     for (let i = 0; i < name.length; i++) {
         let cnname = name[i].versionName
-        
-        
+
+
         if (cnname == checkVersionName) {
             console.log(name[i])
         }
-       
+
     }
 }
 versionNamez(updateList)
@@ -195,15 +195,15 @@ console.log("*******************************************************************
 //type      **********************************************************************************************************************************************
 console.log("type :", checkType)
 console.log("*************************************************************************************************************************")
- function typez(typez:any) {
+function typez(typez: any) {
     for (let i = 0; i < typez.length; i++) {
-        
+
         let cntype = typez[i].type
-                     if (cntype == checkType) {
-                
+        if (cntype == checkType) {
+
             console.log(typez[i])
         }
-           }
+    }
 }
-typez( updateList)
+typez(updateList)
 // *******************************************************************************************************************************************
