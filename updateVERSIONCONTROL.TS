@@ -150,23 +150,23 @@ function maxReleaseAuthor() {
     console.log("maxmium releases author:")
     const authorNames: string[] = []
     versionUpdateReleaseList.forEach((value) => {
-        for (let i of value.author)
-            authorNames.push(i)
+        for (let element of value.author)
+            authorNames.push(element)
     })
     // console.log(authorNames)
     let mostFrequent = 1;
     let authorName = "default"
-    let m = 1;
-    for (let i = 0; i < authorNames.length; i++) {
-        for (let j = 1; j < authorNames.length; j++) {
-            if (authorNames[i] == authorNames[j])
-                m++;
-            if (mostFrequent < m) {
-                mostFrequent = m;
-                authorName = authorNames[i];
+    let count = 1;
+    for (let element = 0; element < authorNames.length; element++) {
+        for (let index = 1; index < authorNames.length; index++) {
+            if (authorNames[element] == authorNames[index])
+            count++;
+            if (mostFrequent < count) {
+                mostFrequent = count;
+                authorName = authorNames[element];
             }
         }
-        m = 0;
+        count = 0;
     } console.log("*****************************************************************************************************")
     console.log(`\nThe author'${authorName}'has worked on more no of releases, the count is "${mostFrequent}"`);
 }
